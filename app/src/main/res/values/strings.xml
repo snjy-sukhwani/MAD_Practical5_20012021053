@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">MAD_Practical5_20012021053</string>
+    <string name="appTitle"><b>Music App - 20012021053</b></string>
+    <string name="musicNameText">Nit Nit</string>
+    <string name="musicAuthorText">Jasleen Royal</string>
+    <string name="musicImgDescription">Image of the Song Album</string>
+    <string name="prevBtnDescription">Previous Song Button</string>
+    <string name="playPauseBtnDescription">Play or Pause the Song</string>
+    <string name="nextBtnDescription">Play the Next Song</string>
+    <string name="playlistDescription">Check out your playlist</string>
+    <string name="favoriteBtnDescription">Add your song to Favorites</string>
+    <string name="playlistModeBtnDescription">Change the Playlist flow of Songs</string>
+    <string name="moreOptionsBtnDescription">More Options</string>
 </resources>
