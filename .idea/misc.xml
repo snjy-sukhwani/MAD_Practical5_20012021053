@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Ganpat University/GUNI Sem5/Mobile Application Development (MAD)/Lab Material/MAD_Practical5_20012021053/app/src/main/res/layout/activity_main.xml" value="0.24114583333333334" />
+        <entry key="..\:/Ganpat University/GUNI Sem5/Mobile Application Development (MAD)/Lab Material/MAD_Practical5_20012021053/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.19" />
+        <entry key="..\:/Ganpat University/GUNI Sem5/Mobile Application Development (MAD)/Lab Material/MAD_Practical5_20012021053/app/src/main/res/drawable/ic_baseline_play_arrow_48.xml" value="0.19" />
+        <entry key="..\:/Ganpat University/GUNI Sem5/Mobile Application Development (MAD)/Lab Material/MAD_Practical5_20012021053/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Ganpat University/GUNI Sem5/Mobile Application Development (MAD)/Lab Material/Programming Files/Practical 5/MAD_Practical5_20012021053/app/src/main/res/drawable/ic_baseline_playlist_play_24.xml" value="0.156" />
+        <entry key="..\:/Ganpat University/GUNI Sem5/Mobile Application Development (MAD)/Lab Material/Programming Files/Practical 5/MAD_Practical5_20012021053/app/src/main/res/layout/activity_main.xml" value="0.22291666666666668" />
       </map>
     </option>
   </component>
