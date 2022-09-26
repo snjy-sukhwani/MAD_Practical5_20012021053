@@ -89,8 +89,12 @@
 
             app:layout_constraintTop_toBottomOf="@id/musicCard"
 
-            app:thumbColor="#FF3A3A"
+            app:thumbColor="@color/red"
             app:thumbElevation="5dp"
+
+            app:trackColorActive="@color/red"
+            app:trackColorInactive="@color/white"
+            app:haloColor="@color/red"
 
             />
 
@@ -185,7 +189,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:backgroundTint="#FF3A3A"
+                android:backgroundTint="@color/red"
 
                 android:src="@drawable/ic_baseline_play_arrow_24"
                 android:contentDescription="@string/playPauseBtnDescription"
@@ -246,6 +250,8 @@
                 android:src="@drawable/ic_baseline_format_list_bulleted_24"
                 android:contentDescription="@string/playlistDescription"
 
+                app:tint="@color/myIconsColor"
+
                 app:layout_constraintBottom_toBottomOf="@id/otherSection"
 
                 app:layout_constraintHeight="wrap_content"
@@ -265,6 +271,8 @@
 
                 android:src="@drawable/ic_baseline_favorite_border_24"
                 android:contentDescription="@string/favoriteBtnDescription"
+
+                app:tint="@color/myIconsColor"
 
                 app:layout_constraintBottom_toBottomOf="@id/otherSection"
 
@@ -286,6 +294,8 @@
                 android:src="@drawable/ic_baseline_shuffle_24"
                 android:contentDescription="@string/playlistModeBtnDescription"
 
+                app:tint="@color/myIconsColor"
+
                 app:layout_constraintBottom_toBottomOf="@id/otherSection"
 
                 app:layout_constraintHeight="wrap_content"
@@ -304,8 +314,9 @@
                 android:src="@drawable/ic_baseline_more_horiz_24"
                 android:contentDescription="@string/moreOptionsBtnDescription"
 
-
                 app:layout_constraintBottom_toBottomOf="@id/otherSection"
+
+                app:tint="@color/myIconsColor"
 
                 app:layout_constraintHeight="wrap_content"
                 app:layout_constraintLeft_toRightOf="@id/playlistType"
