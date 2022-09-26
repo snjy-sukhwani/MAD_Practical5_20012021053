@@ -1,18 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- App Title Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fitsSystemWindows="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="noScroll"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/appTitle"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content Of the Application -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!--Material Card for Music Image-->
+        <com.google.android.material.card.MaterialCardView
+
+            android:id="@+id/musicCard"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="35dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toTopOf="@id/musicSlider"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Image Background -->
+                <ImageView
+
+                    android:id="@+id/musicImg"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:src="@drawable/musicbg"
+                    android:contentDescription="@string/musicImgDescription"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--Slider-->
+        <com.google.android.material.slider.Slider
+
+            android:id="@+id/musicSlider"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="30dp"
+
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toTopOf="@id/musicName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/musicCard"
+
+            app:thumbColor="#FF3A3A"
+            app:thumbElevation="5dp"
+
+            />
+
+        <!--Music Name-->
+        <TextView
+
+            android:id="@+id/musicName"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="25dp"
+
+            android:layout_marginTop="15dp"
+            android:text="@string/musicNameText"
+
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+
+            app:layout_constraintBottom_toTopOf="@id/musicAuthor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/musicSlider"
+
+            />
+
+        <!--Music Author-->
+        <TextView
+
+            android:id="@+id/musicAuthor"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="30dp"
+
+            android:layout_marginTop="0dp"
+            android:text="@string/musicAuthorText"
+
+            android:textAlignment="center"
+            android:textSize="13sp"
+
+            app:layout_constraintBottom_toTopOf="@id/playerSection"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/musicName"
+
+
+            />
+
+        <!--Player Section-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/playerSection"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="30dp"
+
+            android:layout_marginTop="15dp"
+
+            app:layout_constraintBottom_toTopOf="@id/otherSection"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/musicAuthor">
+
+            <!--Floating Buttons (Previous)-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+                android:id="@+id/previousSongBtn"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_baseline_skip_previous_24"
+                android:contentDescription="@string/prevBtnDescription"
+
+                app:fabSize="normal"
+
+                app:layout_constraintBottom_toBottomOf="@id/playerSection"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/playPauseSongBtn"
+                app:layout_constraintTop_toTopOf="@id/playerSection"
+
+                app:useCompatPadding="true" />
+
+            <!--Floating Buttons (Play/Pause)-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/playPauseSongBtn"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:backgroundTint="#FF3A3A"
+
+                android:src="@drawable/ic_baseline_play_arrow_24"
+                android:contentDescription="@string/playPauseBtnDescription"
+
+                app:layout_constraintBottom_toBottomOf="@id/playerSection"
+                app:layout_constraintLeft_toRightOf="@id/previousSongBtn"
+                app:layout_constraintRight_toLeftOf="@id/nextSongBtn"
+                app:layout_constraintTop_toTopOf="@id/playerSection"
+
+                app:tint="@color/white"
+                app:useCompatPadding="true"
+
+                />
+
+            <!--Floating Buttons (Next)-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/nextSongBtn"
+
+                android:layout_width="64dp"
+                android:layout_height="57dp"
+
+                android:src="@drawable/ic_baseline_skip_next_24"
+                android:contentDescription="@string/nextBtnDescription"
+
+                app:layout_constraintBottom_toBottomOf="@id/playerSection"
+
+                app:layout_constraintLeft_toRightOf="@id/playPauseSongBtn"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/playerSection"
+                app:useCompatPadding="true"
+
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Other Options-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/otherSection"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/playerSection">
+
+            <ImageView
+                android:id="@+id/playlist"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+
+                android:src="@drawable/ic_baseline_format_list_bulleted_24"
+                android:contentDescription="@string/playlistDescription"
+
+                app:layout_constraintBottom_toBottomOf="@id/otherSection"
+
+                app:layout_constraintHeight="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/otherSection"
+                app:layout_constraintRight_toLeftOf="@id/favorite"
+                app:layout_constraintTop_toTopOf="@id/otherSection"
+
+                app:layout_constraintWidth="wrap_content"
+
+                />
+
+            <ImageView
+                android:id="@+id/favorite"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginHorizontal="10dp"
+
+                android:src="@drawable/ic_baseline_favorite_border_24"
+                android:contentDescription="@string/favoriteBtnDescription"
+
+                app:layout_constraintBottom_toBottomOf="@id/otherSection"
+
+                app:layout_constraintHeight="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/playlist"
+                app:layout_constraintRight_toLeftOf="@id/playlistType"
+                app:layout_constraintTop_toTopOf="@id/otherSection"
+
+                app:layout_constraintWidth="wrap_content"
+
+                />
+
+            <ImageView
+                android:id="@+id/playlistType"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginHorizontal="10dp"
+
+                android:src="@drawable/ic_baseline_shuffle_24"
+                android:contentDescription="@string/playlistModeBtnDescription"
+
+                app:layout_constraintBottom_toBottomOf="@id/otherSection"
+
+                app:layout_constraintHeight="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/favorite"
+                app:layout_constraintRight_toLeftOf="@id/moreOption"
+                app:layout_constraintTop_toTopOf="@id/otherSection"
+
+                app:layout_constraintWidth="wrap_content" />
+
+            <ImageView
+                android:id="@+id/moreOption"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+
+                android:src="@drawable/ic_baseline_more_horiz_24"
+                android:contentDescription="@string/moreOptionsBtnDescription"
+
+
+                app:layout_constraintBottom_toBottomOf="@id/otherSection"
+
+                app:layout_constraintHeight="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/playlistType"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/otherSection"
+
+                app:layout_constraintWidth="wrap_content" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
