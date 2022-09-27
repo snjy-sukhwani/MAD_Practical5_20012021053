@@ -39,8 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
 
-            android:layout_marginTop="30dp"
-            app:cardCornerRadius="35dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             app:layout_constraintBottom_toTopOf="@id/musicSlider"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -107,7 +107,7 @@
 
             android:layout_marginHorizontal="25dp"
 
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="@string/musicNameText"
 
             android:textAlignment="center"
@@ -270,8 +270,6 @@
 
                 android:src="@drawable/ic_baseline_favorite_border_24"
                 android:contentDescription="@string/favoriteBtnDescription"
-
-                app:tint="@color/myIconsColor"
 
                 app:layout_constraintBottom_toBottomOf="@id/otherSection"
 
