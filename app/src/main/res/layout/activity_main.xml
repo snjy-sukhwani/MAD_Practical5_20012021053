@@ -56,12 +56,11 @@
 
                     android:id="@+id/musicImg"
 
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:scaleType="centerCrop"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:src="@drawable/musicbg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="325dp"
+                    android:scaleType="fitXY"
+                    android:scaleY="0.990"
+                    android:src="@drawable/nitnit"
                     android:contentDescription="@string/musicImgDescription"
 
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -82,7 +81,7 @@
 
             android:layout_marginHorizontal="30dp"
 
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintBottom_toTopOf="@id/musicName"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -90,10 +89,10 @@
             app:layout_constraintTop_toBottomOf="@id/musicCard"
 
             app:thumbColor="@color/red"
-            app:thumbElevation="5dp"
+            app:thumbElevation="0dp"
 
             app:trackColorActive="@color/red"
-            app:trackColorInactive="@color/white"
+            app:trackColorInactive="#BDBDBD"
             app:haloColor="@color/red"
 
             />
