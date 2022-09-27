@@ -42,6 +42,10 @@
             android:layout_marginTop="20dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
+            android:elevation="100dp"
+            android:outlineSpotShadowColor="@color/myIconsColor"
+            android:outlineAmbientShadowColor="@color/myIconsColor"
+
             app:layout_constraintBottom_toTopOf="@id/musicSlider"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -73,29 +77,21 @@
 
         <!--Slider-->
         <com.google.android.material.slider.Slider
-
             android:id="@+id/musicSlider"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginHorizontal="30dp"
-
             android:layout_marginTop="20dp"
+            app:haloColor="#FF9090"
             app:layout_constraintBottom_toTopOf="@id/musicName"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-
             app:layout_constraintTop_toBottomOf="@id/musicCard"
-
             app:thumbColor="@color/red"
             app:thumbElevation="0dp"
-
             app:trackColorActive="@color/red"
-            app:trackColorInactive="#BDBDBD"
-            app:haloColor="@color/red"
-
-            />
+            app:trackColorInactive="#BDBDBD" />
 
         <!--Music Name-->
         <TextView
@@ -272,6 +268,9 @@
                 android:contentDescription="@string/favoriteBtnDescription"
 
                 app:layout_constraintBottom_toBottomOf="@id/otherSection"
+
+                app:tint="@color/myIconsColor"
+
 
                 app:layout_constraintHeight="wrap_content"
                 app:layout_constraintLeft_toRightOf="@id/playlist"
