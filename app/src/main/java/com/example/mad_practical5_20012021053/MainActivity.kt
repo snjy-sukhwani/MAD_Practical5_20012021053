@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         var playerRunning =false
-        var playPauseButtonCLicks =0
+        var playPauseButtonClicks =0
         var playlistMode = "S"
         var favouriteSong = false
 
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.playlistType.setOnClickListener{
             if(playerRunning){
+                // Changing the Play Icon to Pause Icon
                 binding.playPauseSongBtn.setImageDrawable(getDrawable(R.drawable.ic_baseline_pause_24))
                 play()
             }
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Player Status : $playerRunning",Toast.LENGTH_LONG).show()
 
             if(playerRunning){
+                // Changing the Play Icon to Pause Icon
                 binding.playPauseSongBtn.setImageDrawable(getDrawable(R.drawable.ic_baseline_pause_24))
                 stop()
                 play()
@@ -64,8 +66,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.playPauseSongBtn.setOnClickListener{
-            if(playPauseButtonCLicks%2==0){
+            if(playPauseButtonClicks%2==0){
                 playerRunning=true
+                // Changing the Play Icon to Pause Icon
                 binding.playPauseSongBtn.setImageDrawable(getDrawable(R.drawable.ic_baseline_pause_24))
                 Toast.makeText(this,"Song is Playing",Toast.LENGTH_LONG).show()
                 play()
@@ -77,13 +80,14 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"Song is Stopped",Toast.LENGTH_LONG).show()
                 stop()
             }
-            playPauseButtonCLicks++
+            playPauseButtonClicks++
         }
 
         binding.nextSongBtn.setOnClickListener{
             Toast.makeText(this,"Player Status : $playerRunning",Toast.LENGTH_LONG).show()
 
             if(playerRunning){
+                // Changing the Play Icon to Pause Icon
                 binding.playPauseSongBtn.setImageDrawable(getDrawable(R.drawable.ic_baseline_pause_24))
                 stop()
                 play()
